@@ -1,0 +1,477 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>IR支援・戦略IRコンサルティング | IR&COMPANY</title>
+    <meta name="description" content="IR&COMPANYは、戦略と数字を一貫させた戦略IR・IR支援を提供するIRコンサルティングファームです。グロース市場企業・上場企業に向けて、価値創造ストーリー設計から「事業計画及び成長可能性に関する事項」の策定・高度化、IR実行まで支援します。">
+    <link rel="canonical" href="https://www.irandcompany.com/">
+
+    <meta property="og:title" content="IR支援・戦略IRコンサルティング | IR&COMPANY">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.irandcompany.com/">
+    <meta property="og:image" content="https://www.irandcompany.com/ogp-image.jpg">
+    <meta property="og:description" content="グロース上場企業の時価総額向上を支援する戦略IRファーム。">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <style>
+        /* =========================================
+           Base Settings
+           ========================================= */
+        :root {
+            --primary-color: #1b4d3e;
+            --accent-color: #c5a059;
+            --text-color: #333333;
+            --text-light: #666666;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+            --header-height: 80px;
+        }
+        
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            color: var(--text-color);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: var(--white);
+            font-feature-settings: "palt";
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "HGS Mincho E", serif;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin: 0 0 1.5rem 0;
+        }
+
+        p { margin: 0 0 1rem 0; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s; }
+        img { max-width: 100%; height: auto; vertical-align: bottom; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        section { padding: 100px 0; }
+        .break-pc { display: block; }
+
+        /* =========================================
+           Header
+           ========================================= */
+        header {
+            background-color: rgba(255, 255, 255, 0.98);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .header-inner { display: flex; justify-content: space-between; align-items: center; height: var(--header-height); }
+        .logo { font-family: "Yu Mincho", serif; font-size: 24px; font-weight: bold; color: var(--primary-color); letter-spacing: 0.1em; }
+        
+        .nav-menu ul { display: flex; list-style: none; margin: 0; padding: 0; }
+        .nav-menu ul li { margin-left: 30px; }
+        .nav-menu ul li a { color: var(--text-color); font-size: 13px; font-weight: 500; letter-spacing: 0.1em; position: relative; }
+        .nav-menu ul li a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 1px; background-color: var(--accent-color); transition: width 0.3s; }
+        .nav-menu ul li a:hover { color: var(--primary-color); }
+        .nav-menu ul li a:hover::after { width: 100%; }
+
+        .hamburger { display: none; cursor: pointer; width: 30px; height: 20px; position: relative; z-index: 1001; }
+        .hamburger span { display: block; width: 100%; height: 2px; background-color: var(--primary-color); position: absolute; transition: all 0.3s; }
+        .hamburger span:nth-child(1) { top: 0; }
+        .hamburger span:nth-child(2) { top: 9px; }
+        .hamburger span:nth-child(3) { top: 18px; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg); top: 9px; }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg); top: 9px; }
+
+        /* =========================================
+           Hero
+           ========================================= */
+        .hero {
+            background-image: linear-gradient(rgba(27, 77, 62, 0.75), rgba(27, 77, 62, 0.6)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-top: var(--header-height);
+        }
+
+        .hero-content { position: relative; z-index: 1; width: 100%; }
+
+        .hero h1 { font-size: 1.2rem; font-family: "Helvetica Neue", sans-serif; font-weight: 500; letter-spacing: 0.1em; margin-bottom: 20px; opacity: 0.9; text-shadow: 0 1px 3px rgba(0,0,0,0.3); }
+        .hero h1 .sub-title { display: block; font-size: 0.9em; margin-bottom: 5px; color: var(--accent-color); }
+
+        .hero-lead { font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", serif; font-weight: 600; font-size: 3.5rem; line-height: 1.4; margin-bottom: 40px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .hero-lead span { display: block; }
+        .hero p.hero-desc { font-size: 1.1rem; opacity: 0.95; margin-bottom: 50px; font-weight: 400; max-width: 640px; text-shadow: 0 1px 5px rgba(0,0,0,0.5); }
+
+        .btn { display: inline-block; background-color: var(--accent-color); color: var(--white); padding: 18px 50px; font-weight: bold; font-size: 1rem; letter-spacing: 0.05em; border-radius: 2px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .btn:hover { background-color: #b08d4b; transform: translateY(-2px); }
+
+        /* =========================================
+           Titles & Scroll Hint
+           ========================================= */
+        .section-title-wrapper, .timeline-title-wrapper, .fee-title-wrapper { text-align: center; margin-bottom: 60px; }
+        .timeline-title-wrapper, .fee-title-wrapper { margin-top: 100px; margin-bottom: 40px; }
+
+        .section-title { font-size: 2.8rem; color: var(--primary-color); display: inline-block; border-bottom: 2px solid var(--accent-color); padding-bottom: 15px; position: relative; }
+        .section-title .ja-sub { display: block; font-size: 1rem; color: var(--text-color); font-weight: normal; font-family: "Helvetica Neue", Arial, sans-serif; margin-top: 10px; letter-spacing: 0.05em; opacity: 0.7; border: none; }
+
+        /* ★横スクロール注釈（PCでは非表示） */
+        .scroll-hint { display: none; }
+
+        /* =========================================
+           Sections
+           ========================================= */
+        #concept { background-color: var(--white); }
+        .concept-layout { text-align: center; }
+        .concept-text { max-width: 800px; margin: 0 auto 60px auto; text-align: left; }
+        .concept-message { font-size: 1.6rem; line-height: 1.6; font-weight: 500; margin-bottom: 30px; text-align: center; color: var(--primary-color); }
+        .concept-desc { font-size: 1.05rem; color: var(--text-light); line-height: 2; }
+        
+        .concept-image { display: flex; flex-direction: column; align-items: center; }
+        .concept-image img { max-width: 800px; border-radius: 4px; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.08)); }
+        .img-caption { margin-top: 15px; font-size: 0.85rem; color: #888; font-family: "Yu Mincho", serif; }
+
+        .services { background-color: var(--bg-light); }
+        .tse-rationale { background-color: var(--white); padding: 60px 50px; margin-bottom: 80px; border-radius: 4px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); display: flex; flex-direction: column; gap: 40px; border-left: 5px solid var(--primary-color); }
+        .tse-rationale__eyebrow { color: var(--accent-color); font-weight: bold; letter-spacing: 0.1em; font-size: 0.9rem; margin-bottom: 15px; font-family: "Helvetica Neue", sans-serif; display: block; }
+        .tse-rationale__header { width: 100%; }
+        .tse-rationale__title { font-size: 1.6rem; line-height: 1.5; margin-bottom: 25px; color: var(--primary-color); }
+        .tse-rationale__desc { font-size: 1rem; color: var(--text-light); line-height: 1.9; }
+        .tse-rationale__figure { width: 100%; margin: 0; text-align: center; }
+        .tse-rationale__figure img { width: 100%; max-width: 100%; height: auto; border: 1px solid #eee; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .tse-rationale__figure figcaption { font-size: 0.8rem; color: #999; margin-top: 15px; text-align: right; }
+
+        .service-structure-image { display: flex; justify-content: center; margin-bottom: 60px; }
+        .service-structure-image img { max-width: 900px; border-radius: 4px; }
+
+        .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .service-card { background: var(--white); padding: 40px 30px; transition: all 0.3s; border-top: 4px solid transparent; height: 100%; display: flex; flex-direction: column; box-sizing: border-box; border-radius: 2px; }
+        .service-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); border-top: 4px solid var(--accent-color); }
+        .service-card h3 { font-family: "Helvetica Neue", sans-serif; font-size: 1.25rem; font-weight: bold; margin-bottom: 20px; color: var(--primary-color); min-height: 3.5rem; display: flex; align-items: center; }
+        .service-card p { font-size: 0.95rem; color: var(--text-light); margin-bottom: 20px; flex-grow: 1; }
+        .service-card ul { padding-left: 20px; font-size: 0.9rem; color: var(--text-color); margin: 0; background-color: #fcfcfc; padding: 20px 20px 20px 40px; border-radius: 4px; }
+        .service-card ul li { margin-bottom: 8px; line-height: 1.5; }
+        .service-card ul li:last-child { margin-bottom: 0; }
+        .service-card ul li.sub { margin-left: 10px; font-size: 0.85rem; list-style-type: circle; }
+
+        .service-timeline { text-align: center; }
+        .service-timeline figure { margin: 0; }
+        .service-timeline img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #eee; }
+        .service-timeline figcaption { margin-top: 25px; font-weight: bold; color: var(--primary-color); font-size: 1.1rem; }
+
+        .fee-grid { display: flex; justify-content: center; gap: 40px; margin-bottom: 40px; flex-wrap: wrap; }
+        .fee-card { background-color: var(--white); border: 1px solid #eee; padding: 40px; width: 45%; box-sizing: border-box; border-radius: 4px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.02); transition: all 0.3s; }
+        .fee-card:hover { border-color: var(--accent-color); transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+        .fee-card h4 { color: var(--primary-color); font-size: 1.25rem; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        .fee-card p { color: var(--text-color); margin-bottom: 5px; font-weight: 500; }
+        .fee-detail { font-size: 0.9rem; color: #888; font-weight: normal !important; }
+
+        .proposal-message { display: block; max-width: 800px; margin: 0 auto; text-align: center; background-color: rgba(197, 160, 89, 0.1); padding: 30px; border-radius: 4px; border: 1px dashed var(--accent-color); text-decoration: none; transition: all 0.3s; cursor: pointer; }
+        .proposal-message:hover { background-color: rgba(197, 160, 89, 0.2); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .proposal-message p { margin: 0; color: var(--primary-color); font-weight: bold; font-size: 1rem; }
+        .proposal-message span { display: block; margin-top: 10px; font-size: 0.9rem; font-weight: normal; color: var(--text-color); }
+
+        footer { background-color: #111; color: #666; text-align: center; padding: 40px 0; font-size: 0.8rem; }
+
+        /* =========================================
+           Responsive (Mobile)
+           ========================================= */
+        @media (max-width: 768px) {
+            .break-pc { display: inline; }
+            :root { --header-height: 60px; }
+            .header-inner { height: 60px; }
+            .hamburger { display: block; }
+            
+            .nav-menu { position: fixed; top: 0; right: -100%; width: 70%; height: 100vh; background-color: var(--white); padding-top: 80px; transition: right 0.3s ease; box-shadow: -5px 0 15px rgba(0,0,0,0.1); }
+            .nav-menu.active { right: 0; }
+            .nav-menu ul { display: block; }
+            .nav-menu ul li { margin: 0; border-bottom: 1px solid #eee; }
+            .nav-menu ul li a { display: block; padding: 20px; font-size: 1rem; color: var(--text-color); }
+
+            .hero-lead { font-size: 2.0rem; margin-bottom: 30px;}
+            .hero p.hero-desc { font-size: 0.95rem; }
+            .section-title { font-size: 2.0rem; }
+            .section-title .ja-sub { font-size: 0.9rem; }
+            
+            .tse-rationale { padding: 30px 20px; gap: 30px; }
+            .tse-rationale__title { font-size: 1.4rem; }
+
+            .service-grid { grid-template-columns: 1fr; gap: 40px; }
+            .timeline-title-wrapper, .fee-title-wrapper { margin-top: 80px; margin-bottom: 40px; }
+            .service-timeline figcaption { font-size: 1rem; margin-top: 15px; }
+            .fee-grid { gap: 20px; }
+            .fee-card { width: 100%; padding: 30px 20px; }
+            .concept-message { font-size: 1.3rem; text-align: left; }
+
+            /* ★横スクロールコンテナ設定 */
+            .concept-image,
+            .service-structure-image,
+            .tse-rationale__figure,
+            .service-timeline figure {
+                display: block; 
+                overflow-x: auto; 
+                -webkit-overflow-scrolling: touch; 
+                width: 100%;
+                padding-bottom: 15px;
+                margin-bottom: 20px;
+            }
+
+            /* ★画像を強制的に大きく（固定幅） */
+            .concept-image img,
+            .service-structure-image img,
+            .tse-rationale__figure img,
+            .service-timeline figure img {
+                max-width: none;
+                width: 800px; 
+                margin: 0 auto;
+            }
+
+            /* ★横スクロール注釈を表示 */
+            .scroll-hint {
+                display: block;
+                font-size: 0.8rem;
+                color: #999;
+                text-align: center;
+                margin-top: 8px;
+                white-space: nowrap;
+                font-weight: normal;
+            }
+            
+            /* キャプション調整 */
+            .img-caption, .tse-rationale__figure figcaption, .service-timeline figcaption {
+                text-align: center;
+                display: block;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                IR & COMPANY
+            </a>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="#concept">コンセプト</a></li>
+                    <li><a href="#service">サービス</a></li>
+                    <li><a href="works.html">ご支援実績</a></li>
+                    <li><a href="company.html">会社概要</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>
+                <span class="sub-title">グロース上場企業向け 戦略IRコンサルティング</span>
+                IR & COMPANY
+            </h1>
+            
+            <p class="hero-lead">
+                <span>戦略と数字がリンクした</span>
+                <span>「価値創造ストーリー」で、</span>
+                <span>市場から正当に評価される企業へ。</span>
+            </p>
+            
+            <p class="hero-desc">
+                グロース上場企業の「時価総額100億円」突破をご支援する、<br class="break-pc">
+                戦略策定×IR実行支援のプロフェッショナルファーム。
+            </p>
+            
+            <a href="contact.html" class="btn">無料相談・お問い合わせ</a>
+        </div>
+    </section>
+
+    <section id="concept">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <h2 class="section-title">
+                    Strategic IR Partner
+                    <span class="ja-sub">戦略IRパートナーとしての強み</span>
+                </h2>
+            </div>
+            
+            <div class="concept-layout">
+                <div class="concept-text">
+                    <p class="concept-message">
+                        弊社は、市場からの期待形成と、その実現を一貫して設計する<br class="break-pc">戦略×IRファームです。
+                    </p>
+                    <p class="concept-desc">
+                        従来の「戦略コンサル（描くだけ）」や「IR制作会社（見せるだけ）」とは一線を画します。<br>
+                        グロース市場において投資家が求めているのは、目先の利益だけではなく、将来の高い成長性を裏付ける「納得感のあるストーリー」とその「進捗」です。<br>
+                    </p>                      
+                    <p class="concept-desc" style="margin-top: 1.5em;">
+                        貴社のIR部門に寄り添い、市場から求められる要件(①成長戦略の策定, ②戦略実行, ③上記の継続開示）を共にクリアしていくパートナーとして協力致します。
+                    </p>
+                </div>
+                
+                <div class="concept-image">
+                    <img src="./positioning.png" alt="IR & COMPANYのポジショニングマップ（戦略とIRの一貫性）">
+                    <span class="img-caption">※弊社のポジショニング</span>
+                    <span class="scroll-hint">※横スクロールで全体をご覧いただけます</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="service" class="services">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <h2 class="section-title">
+                    Service Overview
+                    <span class="ja-sub">提供サービス</span>
+                </h2>
+            </div>
+
+            <div class="tse-rationale">
+                <div class="tse-rationale__header">
+                    <p class="tse-rationale__eyebrow">TSE REQUIREMENT</p>
+                    <h3 class="tse-rationale__title">
+                        グロース市場では「時価総額100億円」を意識した成長戦略と、その継続開示が求められます。
+                    </h3>
+                    <p class="tse-rationale__desc">
+                        IR & COMPANYの支援は、単なる資料制作ではなく、東証の要求水準に沿って
+                        <strong>戦略 → 実行 → 継続開示</strong>を設計し、時価総額100億円到達に向けたValue upを実装するためのものです。
+                    </p>
+                </div>
+
+                <figure class="tse-rationale__figure">
+                    <img src="./tse_growth_timeline.png" alt="東証グロース市場 上場廃止基準に至るタイムラインと要求水準">
+                    <figcaption>※東証（グロース）における要求の背景</figcaption>
+                    <span class="scroll-hint">※横スクロールで全体をご覧いただけます</span>
+                </figure>
+            </div>
+
+            <div class="service-structure-image">
+                <img src="./service_structure.png" alt="IR支援サービス提供体制図">
+                <span class="img-caption" style="display:block; text-align:center; margin-top:10px; color:#888; font-size:0.85rem; font-family:'Yu Mincho', serif;">※サービス提供体制図</span>
+                <span class="scroll-hint">※横スクロールで全体をご覧いただけます</span>
+            </div>
+
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>01. 事業戦略策定</h3>
+                    <p>市場環境や競合分析に基づき、貴社事業のKSF（主要成功要因）を特定。貴社特有の強みを活かした「固有の勝ち筋」を明確化し、事業計画およびロードマップへと落とし込みます。</p>
+                    <ul>
+                        <li>「事業計画及び成長可能性に関する事項」の策定</li>
+                        <li class="sub">事業戦略グランドデザイン</li>
+                        <li class="sub">事業計画具体化（収益モデル、実行ロードマップ等）</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>02. 実行支援</h3>
+                    <p>戦略は実行されて初めて価値を持ちます。四半期ごとにKPIの進捗を確認し、未達の場合は対策を検討。投資家との対話を通じて市場の期待値を適切にコントロールします。</p>
+                    <ul>
+                        <li>必要に応じてご支援可能</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>03. 継続開示支援</h3>
+                    <p>策定した戦略を、投資家が理解・評価しやすい「価値創造ストーリー」へと変換します。会社紹介資料や決算説明資料において、戦略と実績がリンクする開示構造を設計します。</p>
+                    <ul>
+                        <li>継続開示（戦略アップデート、決算説明資料作成）</li>
+                        <li>適宜開示（会社紹介資料　等）</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-title-wrapper">
+                <h2 class="section-title">
+                    Standard Timeline
+                    <span class="ja-sub">標準スケジュール</span>
+                </h2>
+            </div>
+
+            <div class="service-timeline">
+                <figure>
+                    <img src="./Timeline.png" alt="ご支援の標準的なタイムライン（5ヶ月間のスケジュール）">
+                    <figcaption>
+                        会社紹介資料・戦略策定・開示の雛形作成は5カ月の支援で完了。
+                    </figcaption>
+                    <span class="scroll-hint">※横スクロールで全体をご覧いただけます</span>
+                </figure>
+            </div>
+
+            <div class="fee-title-wrapper">
+                <h2 class="section-title">
+                    Fee Structure
+                    <span class="ja-sub">料金体系</span>
+                </h2>
+            </div>
+            
+            <div class="fee-grid">
+                <div class="fee-card">
+                    <h4>① 一般的なコンサルティング契約</h4>
+                    <p>月額定額フィー</p>
+                   
+                </div>
+                <div class="fee-card">
+                    <h4>② 成功報酬型契約</h4>
+                    <p>リスクシェア型</p>
+                    <p class="fee-detail">（支援における人件費 ＋ 成功報酬）</p>
+                </div>
+            </div>
+
+            <a href="contact.html" class="proposal-message">
+                <p>詳細なご提案書を無料で作成・送付いたします。</p>
+                <span>貴社の状況に合わせた支援内容をご提案しますので、まずはお気軽にお問い合わせください。</span>
+            </a>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            &copy; 2025 IR & COMPANY All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const allLinks = document.querySelectorAll('nav a');
+
+            // Toggle menu
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            // Close menu when any link is clicked
+            allLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
