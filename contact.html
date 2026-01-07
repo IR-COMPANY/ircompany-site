@@ -164,10 +164,13 @@
         <p style="text-align:center; margin-bottom:60px;">下記フォームよりお気軽にお問い合わせください。</p>
         
         <form class="contact-form" action="https://formspree.io/f/xaqnzdrk" method="POST">
+            
+            <input type="hidden" name="_language" value="ja" />
+
             <dl>
                 <dt>お問い合わせ項目<span class="required-badge">必須</span></dt>
                 <dd>
-                    <select name="category" required>
+                    <select name="お問い合わせ項目" required>
                         <option value="" disabled selected>選択してください</option>
                         <option value="IR支援サービスについて">IR支援サービスについて</option>
                         <option value="お見積もりのご依頼">お見積もりのご依頼</option>
@@ -177,26 +180,24 @@
                 </dd>
                 
                 <dt>貴社名<span class="required-badge">必須</span></dt>
-                <dd><input type="text" name="company" required></dd>
+                <dd><input type="text" name="会社名" required></dd>
                 
                 <dt>お名前<span class="required-badge">必須</span></dt>
-                <dd><input type="text" name="name" required></dd>
+                <dd><input type="text" name="名前" required></dd>
                 
                 <dt>メールアドレス<span class="required-badge">必須</span></dt>
                 <dd><input type="email" name="_replyto" required></dd>
                 
                 <dt>お問い合わせ内容<span class="required-badge">必須</span></dt>
-                <dd><textarea name="message" rows="8" required></textarea></dd>
+                <dd><textarea name="メッセージ" rows="8" required></textarea></dd>
             </dl>
 
             <div class="privacy-area">
                 <label>
-                    <input type="checkbox" name="privacy" required>
+                    <input type="checkbox" name="個人情報同意" value="同意する" required>
                     <div><span class="privacy-trigger" id="openPrivacyBtn">個人情報の取り扱い</span>について同意する</div>
                 </label>
             </div>
-
-            <input type="hidden" name="_language" value="ja" />
 
             <button type="submit" class="submit-btn">送 信</button>
         </form>
@@ -218,7 +219,7 @@
                 <p>ご本人から個人情報の開示、訂正、削除等のご請求があった場合は、適切に対応いたします。</p>
             </div>
             <div style="text-align:center; margin-top:30px;">
-                <button class="submit-btn" style="padding: 10px 40px; margin: 0 auto;" id="closeModalBtn">閉じる</button>
+                <button class="submit-btn" style="padding: 10px 40px; margin: 0 auto; width: auto;" id="closeModalBtn">閉じる</button>
             </div>
         </div>
     </div>
