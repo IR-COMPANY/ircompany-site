@@ -2,9 +2,10 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>会社概要 | IR&COMPANY（IR支援・戦略IR）</title>
     <meta name="description" content="IR&COMPANYの会社概要。戦略コンサルティング水準でIR支援・戦略IRを提供する専門ファームです。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.ircompanyjp.com/company.html">
 
     <style>
         /* --- 基本設定 --- */
@@ -24,6 +25,9 @@
             padding: 0;
             line-height: 1.8;
             -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         a {
@@ -79,13 +83,23 @@
             font-size: 13px;
             font-weight: 500;
             letter-spacing: 0.1em;
+            position: relative;
         }
 
         .nav-menu ul li a:hover,
         .nav-menu ul li a.active {
             color: var(--primary-color);
-            border-bottom: 1px solid var(--accent-color);
         }
+
+        /* ハンバーガーメニュー */
+        .hamburger { display: none; cursor: pointer; width: 30px; height: 20px; position: relative; z-index: 1001; }
+        .hamburger span { display: block; width: 100%; height: 2px; background-color: var(--primary-color); position: absolute; transition: all 0.3s; }
+        .hamburger span:nth-child(1) { top: 0; }
+        .hamburger span:nth-child(2) { top: 9px; }
+        .hamburger span:nth-child(3) { top: 18px; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg); top: 9px; }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg); top: 9px; }
 
         /* --- メインコンテンツ --- */
         .page-header {
@@ -130,7 +144,7 @@
             font-weight: bold;
             color: var(--primary-color);
             background-color: #fff;
-            white-space: nowrap; /* 項目名の折り返し防止 */
+            white-space: nowrap;
         }
 
         /* --- フッター --- */
@@ -140,13 +154,31 @@
             text-align: center;
             padding: 40px 0;
             font-size: 0.8rem;
+            margin-top: auto; /* コンテンツが少ない時にフッターを最下部に */
         }
 
-        /* --- レスポンシブ対応（スマホで縦型にする設定） --- */
+        /* --- レスポンシブ対応（スマホ） --- */
         @media (max-width: 768px) {
-            .nav-menu ul {
-                display: none; /* 簡易的に非表示（必要ならハンバーガーメニュー等を追加） */
+            :root { --header-height: 60px; }
+            .header-inner { height: 60px; }
+            .hamburger { display: block; }
+
+            /* スマホメニュー */
+            .nav-menu { 
+                position: fixed; 
+                top: 0; 
+                right: -100%; 
+                width: 70%; 
+                height: 100vh; 
+                background-color: var(--white); 
+                padding-top: 80px; 
+                transition: right 0.3s ease; 
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1); 
             }
+            .nav-menu.active { right: 0; }
+            .nav-menu ul { display: block; }
+            .nav-menu ul li { margin: 0; border-bottom: 1px solid #eee; }
+            .nav-menu ul li a { display: block; padding: 20px; font-size: 1rem; color: var(--text-color); }
 
             .page-header {
                 padding-top: 140px;
@@ -188,12 +220,19 @@
     <header>
         <div class="container header-inner">
             <a href="index.html" class="logo">IR & COMPANY</a>
-            <nav class="nav-menu">
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav class="nav-menu" id="nav-menu">
                 <ul>
                     <li><a href="index.html#concept">コンセプト</a></li>
                     <li><a href="index.html#service">サービス</a></li>
                     <li><a href="works.html">ご支援実績</a></li>
-                    <li><a href="company.html" class="active">会社概要</a></li>
+                    <li><a href="company.html" class="active" style="border-bottom: 1px solid var(--accent-color);">会社概要</a></li>
                     <li><a href="contact.html">お問い合わせ</a></li>
                 </ul>
             </nav>
@@ -240,6 +279,28 @@
             &copy; 2025 IR & COMPANY All Rights Reserved.
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+            const allLinks = document.querySelectorAll('nav a');
+
+            // Toggle menu
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            // Close menu when any link is clicked
+            allLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
